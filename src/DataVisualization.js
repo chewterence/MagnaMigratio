@@ -6,7 +6,7 @@ import MapChart from "./MapChart";
 function DataVisualization() {
   const [content, setContent] = useState("");
 
-  const [state, setstate] = useState({data: 1959})
+  const [state, setstate] = useState({data: 1982})
 
   const updateYear = (event, year) => {
     setstate({data: year});
