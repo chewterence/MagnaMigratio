@@ -3,24 +3,25 @@ import { Slider } from '@mui/material';
 import ReactTooltip from "react-tooltip";
 import MapChart from "./MapChart";
 
-
 function DataVisualization() {
   const [content, setContent] = useState("");
 
-  const changeValue = (event, year) => {
-    console.log(year);
+  const [state, setstate] = useState({data: 1959})
+
+  const updateYear = (event, year) => {
+    setstate({data: year});
+    console.log(setstate)
   };
 
   return (
     <div>
-      <MapChart setTooltipContent={setContent} />
-
+      <MapChart setTooltipContent={setContent} selectedYear={state.data} />
       <ReactTooltip>{content}</ReactTooltip>
 
       <Slider
         aria-label="Temperature"
         defaultValue={1982}
-        onChangeCommitted={changeValue}
+        onChangeCommitted={updateYear}
         valueLabelDisplay="auto"
         step={1}
         marks

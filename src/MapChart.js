@@ -10,10 +10,9 @@ import line_coordinates_data from './line_coordinates.json'
 
 // Canada: 56.1304° N, 106.3468° W
 
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ({ setTooltipContent, selectedYear}) => {
   // NOTE: [LONGITUDE, LATITUDE] east is positive west is negative
-  // const coordinates = [{from: [106.3468, -56.1304], to: [116.006, 39.79128]}, {from: [37.7522, 55.6566], to: [-100.006, 23.7128]}, {from: [15.3522, 18.8566], to: [-3.006, 3.7128]}]
-  const coordinates = line_coordinates_data['1959'];
+  const coordinates = line_coordinates_data[selectedYear];
 
   var migrationLines = [];
   // This is where the migration lines are loaded
