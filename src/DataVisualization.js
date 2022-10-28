@@ -6,6 +6,11 @@ import MapChart from "./MapChart";
 
 function DataVisualization() {
   const [content, setContent] = useState("");
+
+  const changeValue = (event, year) => {
+    console.log(year);
+  };
+
   return (
     <div>
       <MapChart setTooltipContent={setContent} />
@@ -15,6 +20,7 @@ function DataVisualization() {
       <Slider
         aria-label="Temperature"
         defaultValue={1982}
+        onChangeCommitted={changeValue}
         valueLabelDisplay="auto"
         step={1}
         marks
