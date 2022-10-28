@@ -1,9 +1,10 @@
 import React, { memo } from "react";
 import {
-  ZoomableGroup,
   ComposableMap,
   Geographies,
-  Geography
+  Geography,
+  Graticule,
+  Line
 } from "react-simple-maps";
 
 const MapChart = ({ setTooltipContent }) => {
@@ -47,6 +48,17 @@ const MapChart = ({ setTooltipContent }) => {
               ))
             }
           </Geographies>
+
+
+      <Line
+        from={[1.3522, 48.8566]}
+        to={[-74.006, 40.7128]}
+        stroke="#FF5533"
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+
+
       </ComposableMap>
     </div>
   );
