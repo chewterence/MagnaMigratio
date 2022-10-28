@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import MapChart from "./MapChart";
+import DataVisualization from "./DataVisualization";
 import './App.css';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
           a GET1030 project (will make this part nicer if i feel like it)
         </p>
       </header>
-      <MapChart/>
+      <DataVisualization />
     </div>
   );
 }
