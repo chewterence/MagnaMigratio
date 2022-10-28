@@ -18,6 +18,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   const coordinates = [{from: [90.3522, 10.8566], to: [-74.006, 40.7128]}, {from: [35.3522, 28.8566], to: [-100.006, 23.7128]}, {from: [15.3522, 18.8566], to: [-3.006, 3.7128]}]
   var migrationLines = [];
+  // This is where the migration lines are loaded
   for (var i = 0; i < coordinates.length; i++) {
     migrationLines.push(
       <Line
