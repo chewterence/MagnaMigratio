@@ -5,27 +5,24 @@ import {
   Geography,
   Line
 } from "react-simple-maps";
-// import * as data from './worldmap.json';
-// const {test} = data;
 
-// import jsonData from './worldmap.json';
+import line_coordinates_data from './line_coordinates.json'
 
-// const loadData = () => JSON.parse(JSON.stringify(jsonData));
-
-
+// Canada: 56.1304° N, 106.3468° W
 
 const MapChart = ({ setTooltipContent }) => {
+  // NOTE: [LONGITUDE, LATITUDE] east is positive west is negative
+  // const coordinates = [{from: [106.3468, -56.1304], to: [116.006, 39.79128]}, {from: [37.7522, 55.6566], to: [-100.006, 23.7128]}, {from: [15.3522, 18.8566], to: [-3.006, 3.7128]}]
+  const coordinates = line_coordinates_data['1959'];
 
-  // const coordinates = [{from: [90.3522, 10.8566], to: [-74.006, 40.7128]}, {from: [35.3522, 28.8566], to: [-100.006, 23.7128]}, {from: [15.3522, 18.8566], to: [-3.006, 3.7128]}]
-  const coordinates = [];
   var migrationLines = [];
   // This is where the migration lines are loaded
   for (var i = 0; i < coordinates.length; i++) {
     migrationLines.push(
       <Line
-        from={coordinates[i].from}
-        to={coordinates[i].to}
-        stroke="#FF5533"
+        from={coordinates[i][0]}
+        to={coordinates[i][1]}
+        stroke="#3498DB"
         strokeWidth={1}
         strokeLinecap="round"
       />
@@ -68,6 +65,8 @@ const MapChart = ({ setTooltipContent }) => {
                       outline: "none"
                     }
                   }}
+                  stroke="#000000"
+                  strokeWidth={0.1}
                 />
               ))
             }
