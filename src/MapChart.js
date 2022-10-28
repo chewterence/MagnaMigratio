@@ -3,11 +3,33 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Graticule,
   Line
 } from "react-simple-maps";
+// import * as data from './worldmap.json';
+// const {test} = data;
+
+// import jsonData from './worldmap.json';
+
+// const loadData = () => JSON.parse(JSON.stringify(jsonData));
+
+
 
 const MapChart = ({ setTooltipContent }) => {
+
+  const coordinates = [{from: [90.3522, 10.8566], to: [-74.006, 40.7128]}, {from: [35.3522, 28.8566], to: [-100.006, 23.7128]}, {from: [15.3522, 18.8566], to: [-3.006, 3.7128]}]
+  var migrationLines = [];
+  for (var i = 0; i < coordinates.length; i++) {
+    migrationLines.push(
+      <Line
+        from={coordinates[i].from}
+        to={coordinates[i].to}
+        stroke="#FF5533"
+        strokeWidth={1}
+        strokeLinecap="round"
+      />
+    );
+  }
+
   return (
     <div data-tip="">
       <ComposableMap
@@ -49,15 +71,7 @@ const MapChart = ({ setTooltipContent }) => {
             }
           </Geographies>
 
-
-      <Line
-        from={[1.3522, 48.8566]}
-        to={[-74.006, 40.7128]}
-        stroke="#FF5533"
-        strokeWidth={1}
-        strokeLinecap="round"
-      />
-
+          {migrationLines}
 
       </ComposableMap>
     </div>

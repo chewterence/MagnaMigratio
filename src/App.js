@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import DataVisualization from "./DataVisualization";
 import './App.css';
 
