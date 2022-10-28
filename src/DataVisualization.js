@@ -10,7 +10,6 @@ function DataVisualization() {
 
   const updateYear = (event, year) => {
     setstate({data: year});
-    console.log(setstate)
   };
 
   return (
@@ -21,7 +20,7 @@ function DataVisualization() {
       <Slider
         aria-label="Temperature"
         defaultValue={1982}
-        onChangeCommitted={updateYear}
+        onChange={updateYear}
         valueLabelDisplay="auto"
         step={1}
         marks
