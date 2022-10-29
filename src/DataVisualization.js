@@ -25,7 +25,7 @@ function DataVisualization() {
         step={1}
         marks
         min={1959}
-        max={2010}
+        max={2016}
       />
 
     </div>

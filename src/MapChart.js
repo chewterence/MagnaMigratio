@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import {
   ComposableMap,
+  ZoomableGroup,
   Geographies,
   Geography,
   Line
@@ -15,15 +16,19 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
   const coordinates = line_coordinates_data[selectedYear];
 
   var migrationLines = [];
-  // This is where the migration lines are loaded
+  // This is where the migration lines are styled and loaded
   for (var i = 0; i < coordinates.length; i++) {
+    var coor_from=coordinates[i][0];
+    var coor_to=coordinates[i][1];
+
     migrationLines.push(
       <Line
-        from={coordinates[i][0]}
-        to={coordinates[i][1]}
+        from={coor_from}
+        to={coor_to}
         stroke="#3498DB"
-        strokeWidth={1}
+        strokeWidth={0.25}
         strokeLinecap="round"
+        fill="transparent"
       />
     );
   }
@@ -38,6 +43,7 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
         }}
         height={350}
       >
+        <ZoomableGroup>
           <Geographies geography="/worldmap.json">
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -72,7 +78,7 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
           </Geographies>
 
           {migrationLines}
-
+          </ZoomableGroup>
       </ComposableMap>
     </div>
   );
