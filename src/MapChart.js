@@ -18,15 +18,18 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
   var migrationLines = [];
   // This is where the migration lines are styled and loaded
   for (var i = 0; i < coordinates.length; i++) {
-    var coor_from=coordinates[i][0];
-    var coor_to=coordinates[i][1];
+    var coor_from = coordinates[i][0];
+    var coor_to = coordinates[i][1];
+    var norm_value = coordinates[i][2];
+
+    var strokeWidth = norm_value * 100;
 
     migrationLines.push(
       <Line
         from={coor_from}
         to={coor_to}
         stroke="#3498DB"
-        strokeWidth={0.25}
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
         fill="transparent"
       />
