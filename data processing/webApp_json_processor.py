@@ -37,6 +37,7 @@ for index, row in df.iterrows():
     coor_from = row[4]
     value = row[3]
     origin = row[1]
+    destination = row[0]
 
     # Ignore invalid rows that do not have valid coordinates
     if (isinstance(coor_to, str) and isinstance(coor_from, str)):
@@ -49,8 +50,8 @@ for index, row in df.iterrows():
         coor_to = tuple(map(float,coor_to.split(', ')))
 
         # format results for json
-        #           0           1       2           3       4
-        coor_line = [coor_from, coor_to, norm_value, value, origin]
+        #           0           1       2           3       4       5
+        coor_line = [coor_from, coor_to, norm_value, value, origin, destination]
         # add to json if does not exist
         if year not in json_dict:
             json_dict[year] = [coor_line]
