@@ -22,7 +22,7 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
     var coor_to = coordinates[i][1];
     var norm_value = coordinates[i][2];
 
-    var strokeWidth = norm_value * 100;
+    var strokeWidth = norm_value * 5;
 
     migrationLines.push(
       <Line
