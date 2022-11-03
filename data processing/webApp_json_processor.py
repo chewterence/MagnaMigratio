@@ -32,8 +32,8 @@ json_dict = {}
 for index, row in df.iterrows():
     year = row[2]
     norm_value = row[6]
-    coor_to = row[4]
-    coor_from = row[5]
+    coor_to = row[5]
+    coor_from = row[4]
     value = row[3]
     # Ignore invalid rows that do not have valid coordinates
     if (isinstance(coor_to, str) and isinstance(coor_from, str)):
