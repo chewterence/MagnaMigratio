@@ -21,6 +21,7 @@ function DataVisualization() {
 
   return (
     <div>
+      <br></br>
       <Typography variant="h4" align="center">
         Current Year: {state.selectedYear}
       </Typography>
