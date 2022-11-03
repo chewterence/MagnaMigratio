@@ -2,23 +2,31 @@ import React, { useState } from "react";
 import { Slider, Typography } from '@mui/material';
 import ReactTooltip from "react-tooltip";
 import MapChart from "./MapChart";
+import line_coordinates_data from './line_coordinates.json'
 
 function DataVisualization() {
 
   const [content, setContent] = useState("");
 
-  const [state, setstate] = useState({data: 2008})
+  const [state, setstate] = useState({selectedYear: 1982, totalRefugees: 114049})
 
   const updateYear = (event, year) => {
-    setstate({data: year});
+    var coordinates = line_coordinates_data[year];
+    var total = 0;
+    for (var i = 0; i < coordinates.length; i++) {
+      total += coordinates[i][3];
+    }
+    setstate({selectedYear: year, totalRefugees: total});
   };
 
   return (
     <div>
-      <Typography variant="overline" align="center">
-        Current Year: {state.data}
+      <Typography variant="h4" align="center">
+        Current Year: {state.selectedYear}
       </Typography>
-      <br></br>
+      <Typography variant="overline" align="center">
+        Total Number of Regufees Around the World: {state.totalRefugees}
+      </Typography>
       <Slider
         aria-label="Year"
         defaultValue={1982}
@@ -32,10 +40,8 @@ function DataVisualization() {
       />
       <br></br>
       <br></br>
-      <MapChart setTooltipContent={setContent} selectedYear={state.data} />
+      <MapChart setTooltipContent={setContent} selectedYear={state.selectedYear} />
       <ReactTooltip>{content}</ReactTooltip>
-
-
 
     </div>
   );
