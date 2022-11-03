@@ -28,7 +28,7 @@ const card = (
         Visualizing the great migration of refugees over the decades
       </Typography>
       <Typography variant="body1">
-        Over the decades several individuals across the globe have been displaced from their homes.
+        Over the decades several individuals across the globe have been displaced from their original homes.
       </Typography>
       <Typography variant="body1">
         This data visualization project utilizes data obtained from

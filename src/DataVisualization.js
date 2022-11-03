@@ -26,7 +26,7 @@ function DataVisualization() {
         Current Year: {state.selectedYear}
       </Typography>
       <Typography variant="overline" align="center">
-        Total Number of Regufees Around the World: {state.totalRefugees}
+        Estimated Number of Refugees Around the World: {state.totalRefugees}
       </Typography>
       <Slider
         aria-label="Year"
