@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Slider } from '@mui/material';
+import { Slider, Typography } from '@mui/material';
 import ReactTooltip from "react-tooltip";
 import MapChart from "./MapChart";
 
 function DataVisualization() {
+
   const [content, setContent] = useState("");
 
   const [state, setstate] = useState({data: 2008})
@@ -14,11 +15,12 @@ function DataVisualization() {
 
   return (
     <div>
-      <MapChart setTooltipContent={setContent} selectedYear={state.data} />
-      <ReactTooltip>{content}</ReactTooltip>
-
+      <Typography variant="overline" align="center">
+        Current Year: {state.data}
+      </Typography>
+      <br></br>
       <Slider
-        aria-label="Temperature"
+        aria-label="Year"
         defaultValue={1982}
         onChange={updateYear}
         valueLabelDisplay="auto"
@@ -26,7 +28,14 @@ function DataVisualization() {
         marks
         min={1959}
         max={2016}
+        color="secondary"
       />
+      <br></br>
+      <br></br>
+      <MapChart setTooltipContent={setContent} selectedYear={state.data} />
+      <ReactTooltip>{content}</ReactTooltip>
+
+
 
     </div>
   );
