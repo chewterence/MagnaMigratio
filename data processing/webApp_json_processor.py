@@ -28,6 +28,7 @@ df['norm_value'] = (df['Value']-df['Value'].min())/(df['Value'].max()-df['Value'
 # # ==========================================================================
 # #### WEB APPLICATION DATA FORM
 # # Transform data into usable JSON format for the react web application
+
 json_dict = {}
 for index, row in df.iterrows():
     year = row[2]
@@ -35,6 +36,8 @@ for index, row in df.iterrows():
     coor_to = row[5]
     coor_from = row[4]
     value = row[3]
+    origin = row[1]
+
     # Ignore invalid rows that do not have valid coordinates
     if (isinstance(coor_to, str) and isinstance(coor_from, str)):
         # convert from string to tuple
@@ -46,7 +49,8 @@ for index, row in df.iterrows():
         coor_to = tuple(map(float,coor_to.split(', ')))
 
         # format results for json
-        coor_line = [coor_from, coor_to, norm_value, value]
+        #           0           1       2           3       4
+        coor_line = [coor_from, coor_to, norm_value, value, origin]
         # add to json if does not exist
         if year not in json_dict:
             json_dict[year] = [coor_line]

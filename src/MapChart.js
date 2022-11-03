@@ -37,22 +37,7 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
         fill="transparent"
       />
     );
-    // originMarkers.push(
-    //   <Marker coordinates={coor_from}
-    //     onMouseEnter={() => {
-    //       updateToolTip(value);
-    //     }}
-    //     onMouseLeave={() => {
-    //       setTooltipContent("");
-    //     }}
-    //   >
-    //     <circle r={originPointSize} fill="#F53" />
-    //   </Marker>
-    // );
   }
-
-  
-  
 
   return (
     <div data-tip="">
@@ -85,7 +70,7 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
                       outline: "none"
                     },
                     hover: {
-                      fill: "#F53",
+                      fill: "#707070",
                       outline: "none"
                     },
                     pressed: {
@@ -100,35 +85,19 @@ const MapChart = ({ setTooltipContent, selectedYear}) => {
             }
           </Geographies>
             {migrationLines}
-            {/* {({ coordinates }) =>
-              coordinates.map((c) => (
-                <div>
-                  test
-                </div>
-                // <Marker coordinates={c.coor_from}
-                //   onMouseEnter={() => {
-                //     setTooltipContent(`${c.value}`);
-                //   }}
-                //   onMouseLeave={() => {
-                //     setTooltipContent("");
-                //   }}
-                // >
-                // <circle r={10} fill="#F53" />
-                // </Marker>
-              ))
-            } */}
-          {coordinates.map((c) => (
-            <Marker coordinates={c[0]}
-              onMouseEnter={() => {
-                setTooltipContent(c[3]);
-              }}
-              onMouseLeave={() => {
-                setTooltipContent("");
-              }}
-            >
-              <circle r={5} fill="#F53" />
-            </Marker>
-          ))}
+
+            {coordinates.map((c) => (
+              <Marker coordinates={c[0]}
+                onMouseEnter={() => {
+                  setTooltipContent(c[4] + ": " + c[3] + " refugees");
+                }}
+                onMouseLeave={() => {
+                  setTooltipContent("");
+                }}
+              >
+                <circle r={Math.log(c[3]) / 2} fill="#F53" />
+              </Marker>
+            ))}
           </ZoomableGroup>
       </ComposableMap>
     </div>
