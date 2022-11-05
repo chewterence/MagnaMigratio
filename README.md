@@ -1,7 +1,7 @@
 
 # Magna Migratio
 /ˈmaɲ.ɲa/;
-"Magna Migratio" or latin for "The Great Migration" is a data visualziation project that aims to visualize UNHCR data.
+"Magna Migratio" or latin for "The Great Migration" is a data visualization project that aims to visualize UNHCR data.
 
 This project was created as part of a data visualization project for the GET1030/GEI1002 Computers and the Humanities course, in the National University of Singapore.
 
@@ -15,6 +15,9 @@ The authors of this project are:
 ## Data Source
 UNHCR
 
+## Directory Structure
+
+
 ## Dependencies
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -23,7 +26,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   
 
-In the project directory, you can run:
+In the main project directory, you can run:
 
   
 

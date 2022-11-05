@@ -29,6 +29,8 @@ df['norm_value'] = (df['Value']-df['Value'].min())/(df['Value'].max()-df['Value'
 # #### WEB APPLICATION DATA FORM
 # # Transform data into usable JSON format for the react web application
 
+print(df)
+
 json_dict = {}
 for index, row in df.iterrows():
     year = row[2]

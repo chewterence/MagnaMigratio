@@ -19,8 +19,6 @@ country_coords = pd.read_csv("country_coordinates.csv")
 coords_dict = dict(zip(country_coords.name, zip(country_coords.longitude, country_coords.latitude)))
 
 # ==========================================================================
-##### INTERMEDIATE DATA FORM
-# Used for intermediate data visualization, cleaning and processing
 
 # Convert country of origin and asylum to geo coordinates
 df['coor_from'] = df['Origin'].map(coords_dict)
