@@ -7,6 +7,8 @@
 
 This project was created as part of a data visualization project for the GET1030/GEI1002 Computers and the Humanities course, in the National University of Singapore.
 
+The project was built using ReactJS and deployed on Netlify, now available at [https://magnamigratio.netlify.app/](https://magnamigratio.netlify.app/)
+
 The authors of this project are:
 
 - Terence Chew (chewterence@u.nus.edu)
