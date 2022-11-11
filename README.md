@@ -21,7 +21,7 @@ The authors of this project are:
 
 - Pang Ji Xuan
 
-Any queries regarding the sources, mehtodology, implementation of the project should be directed to chewterence@u.nus.edu
+Any queries regarding the sources, methodology, implementation of the project should be directed to chewterence@u.nus.edu
 
 ## Navigating The Folders
 The following are the important subdirectories and a brief description of its contents:
@@ -29,7 +29,7 @@ The following are the important subdirectories and a brief description of its co
 	- line_coordinates.json is the raw file that the network analysis is performed
 	- A custom algorithm has been written to extract, process then analyse the data using pandas and seaborn
 - **data processing**: contains the code that is used to perform preprocessing of the dataset
-	- The data processing is abstracted into a three step approach.
+	- The data processing is abstracted into a three-step approach.
 	- Run the python scripts in the order of data_preprocessor.py, secondary_data_processor.py, then webApp_json_processor.py
 	- resettlement_data.csv is the raw dataset obtained from UNHCR
   
@@ -43,6 +43,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Data analysis done using [Python](https://www.python.org/) and [Pandas](https://pandas.pydata.org/).
  [React Simple Maps](https://www.react-simple-maps.io/): `npm i -S react-simple-maps`
  [Material UI](https://mui.com/): `npm install @mui/material @emotion/react @emotion/styled`
+ [Seaborn](https://seaborn.pydata.org/#): `pip install seaborn`
 
 ## Getting Started
 In the main project directory, you can run:
